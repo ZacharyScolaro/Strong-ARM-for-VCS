@@ -106,14 +106,14 @@ void gameTemplate()
 void strobePosition(unsigned char strobeAddress, int position)
 {
 	vcsNop2();
-	while (position < 0)
+	if (position < 0)
 	{
-		position += 160;
+		position =0;
 	}
 	vcsNop2();
-	while (position > 159)
+	if (position > 159)
 	{
-		position -= 160;
+		position = 159;
 	}
 	for (int i = 0; i < 5; i++)
 	{
