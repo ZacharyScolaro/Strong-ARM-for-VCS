@@ -22,7 +22,7 @@ void strobePosition(unsigned char strobeAddress, int position);
 // SKULL sprite provided by http://atariage.com/forums/topic/169238-free-sprites-for-the-taking/page-1
 const unsigned char sprite[16] = { 0x3e, 0x7f, 0xbb, 0x93, 0x6e, 0x1c, 0x04, 0x1c, 0,0,0,0,0,0,0,0 };
 
-void gameMain()
+void gameTemplate()
 {
 	int p0x = 80;
 

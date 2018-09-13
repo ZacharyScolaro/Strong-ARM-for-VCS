@@ -31,11 +31,12 @@ SOFTWARE.
 #include "stm32f4xx.h"
 
 #include "vcsLib.h"
-#include "gameTemplate\gameTemplate.h"
+
+#include "games/games.h"
 
 int main(void)
 {
 	vcsLibInit();
 
-	gameMain();
+	runGame();
 }
