@@ -1,8 +1,6 @@
-//#ifndef GAME_TEMPLATE_H
-//#define GAME_TEMPLATE_H
-
-//#include "stm32f4xx.h"
+#ifndef GAME_TEMPLATE_H
+#define GAME_TEMPLATE_H
 
 extern void gameTemplate();
 
-//#endif // GAME_TEMPLATE_H
+#endif // GAME_TEMPLATE_H
