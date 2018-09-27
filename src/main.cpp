@@ -36,6 +36,7 @@ SOFTWARE.
 
 int main(void)
 {
+	__disable_irq();
 	vcsLibInit();
 
 	runGame();
