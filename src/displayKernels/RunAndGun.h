@@ -13,9 +13,12 @@ public:
 	int X;
 	int Y;
 	int Height;
-	unsigned char Graphic[192];
-	unsigned char ColorNusiz[192]; // Color when D0 cleared, D7-D5 NUSIZ0 when D0 set
-	unsigned char HMove[192]; // D7-D5 hmove for normal orientation, D4-D0 hmove for reflected orientation.
+	int LeftXIndent;
+	int RightXIndent;
+	// Must point to arrays of at least size Height elements
+	const unsigned char * Graphic;
+	const unsigned char * ColorNusiz; // Color when D0 cleared, D7-D5 NUSIZ0 when D0 set
+	const unsigned char * HMove; // D7-D5 hmove for normal orientation, D4-D0 hmove for reflected orientation.
 };
 
 class RunAndGun : public DisplayKernel

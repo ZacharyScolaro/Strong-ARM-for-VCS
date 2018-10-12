@@ -12,7 +12,7 @@ RunAndGun::RunAndGun()
 void RunAndGun::PrepareFrame()
 {
 	_p0initialNusiz = _player->InitialNusiz;
-	_p0x = _player->X;
+	_p0x = _player->X + (_player->Reflect ? _player->RightXIndent : _player->LeftXIndent);
 	for (int i = -_player->Height; i < 192; i++)
 	{
 		int index = i +  _player->Height - _player->Y;
