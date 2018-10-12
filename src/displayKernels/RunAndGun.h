@@ -5,13 +5,26 @@
 
 #define PlatformRows 44
 
-class RnGPlayer
+struct RnGPlayerSprite;
+
+struct RnGPlayer
 {
-public:
 	bool Reflect;
-	unsigned char InitialNusiz;
 	int X;
 	int Y;
+	const RnGPlayerSprite * Sprite;
+};
+
+struct RnGPlayerSprite
+{
+	RnGPlayerSprite(unsigned char initialNusiz, int height, int leftXIndent, int rightXIndent,
+		const unsigned char * graphic, const unsigned char * colorNusiz, const unsigned char * hMove)
+		: InitialNusiz(initialNusiz), Height(height), LeftXIndent(leftXIndent), RightXIndent(rightXIndent),
+		Graphic(graphic), ColorNusiz(colorNusiz), HMove(hMove)
+	{
+	}
+
+	unsigned char InitialNusiz;
 	int Height;
 	int LeftXIndent;
 	int RightXIndent;
@@ -33,7 +46,7 @@ public:
 	int _p0x;
 	unsigned char _p0initialColor;
 	unsigned char _p0initialNusiz;
-	RnGPlayer * _player;
+	RnGPlayer _player;
 
 	// Status Bar
 	unsigned char _leftIconGraphic[14];

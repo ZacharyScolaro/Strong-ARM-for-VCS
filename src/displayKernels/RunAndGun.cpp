@@ -11,13 +11,13 @@ RunAndGun::RunAndGun()
 
 void RunAndGun::PrepareFrame()
 {
-	_p0initialNusiz = _player->InitialNusiz;
-	_p0x = _player->X + (_player->Reflect ? _player->RightXIndent : _player->LeftXIndent);
-	for (int i = -_player->Height; i < 192; i++)
+	_p0initialNusiz = _player.Sprite->InitialNusiz;
+	_p0x = _player.X + (_player.Reflect ? _player.Sprite->RightXIndent : _player.Sprite->LeftXIndent);
+	for (int i = -_player.Sprite->Height; i < 192; i++)
 	{
-		int index = i +  _player->Height - _player->Y;
+		int index = i +  _player.Sprite->Height - _player.Y;
 		
-		if (index < 0 || _player->Height <= index)
+		if (index < 0 || _player.Sprite->Height <= index)
 		{
 			if (0 <= i && i < 192)
 			{
@@ -26,8 +26,8 @@ void RunAndGun::PrepareFrame()
 		}
 		else
 		{
-			unsigned char colSiz = _player->ColorNusiz[index];
-			unsigned char hmove = _player->Reflect ? _player->HMove[index] << 4 : _player->HMove[index];
+			unsigned char colSiz = _player.Sprite->ColorNusiz[index];
+			unsigned char hmove = _player.Reflect ? _player.Sprite->HMove[index] << 4 : _player.Sprite->HMove[index];
 			if (i < 0)
 			{
 				if (colSiz & 1)
@@ -42,8 +42,8 @@ void RunAndGun::PrepareFrame()
 			}
 			else if (i < 192)
 			{
-				_p0grp[i] = _player->Reflect ? reverseByte[_player->Graphic[index]] : _player->Graphic[index];
-				_p0col[i] = _player->ColorNusiz[index];
+				_p0grp[i] = _player.Reflect ? reverseByte[_player.Sprite->Graphic[index]] : _player.Sprite->Graphic[index];
+				_p0col[i] = _player.Sprite->ColorNusiz[index];
 				_p0hmove[i] = hmove;
 			}
 		}
