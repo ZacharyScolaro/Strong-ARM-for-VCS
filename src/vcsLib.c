@@ -151,11 +151,16 @@ void vcsTxs2()
 	InjectRomByte(0x9a);
 }
 
-void vcsJsr6(unsigned short address, unsigned short target)
+void vcsJsr6(unsigned short target)
 {
 	InjectRomByte(0x20);
 	InjectRomByte(target & 0xff);
-	YieldDataBus(address);
+
+	//Stack operations
+	while (ADDR_IN & 0x1000)
+		;
+	SET_DATA_MODE_IN
+
 	InjectRomByte(target >> 8);
 	SetNextRomAddress(target & 0x1fff);
 }

@@ -40,7 +40,7 @@ void vcsSty3(unsigned char ZP);
 
 void vcsTxs2();
 
-void vcsJsr6(unsigned short address, unsigned short target);
+void vcsJsr6(unsigned short target);
 
 void vcsLibInit();
 
