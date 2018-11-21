@@ -102,7 +102,7 @@ void RunAndGun::PrepareFrame()
 			_p1ColorNusiz[y++] = (_p1[i].Nusiz << 4) | 1;
 			for (int j = 0; j < _p1[i].Sprite->Height; j++)
 			{
-				_p1Graphic[j + y] = _p1[i].Sprite->Graphic[j];
+				_p1Graphic[j + y] = _p1[i].Reflect ? reverseByte[_p1[i].Sprite->Graphic[j]] : _p1[i].Sprite->Graphic[j];
 				_p1ColorNusiz[j+y+1] = _p1[i].Sprite->ColorNusiz[j];
 			}
 		}

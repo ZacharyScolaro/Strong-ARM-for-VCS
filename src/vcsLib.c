@@ -50,7 +50,7 @@ unsigned char SnoopDataBus(unsigned short address)
 
 	SET_DATA_MODE_IN
 	// Give peripheral time to respond
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 15; i++)
 	{
 		int x = ADDR_IN;
 	}
