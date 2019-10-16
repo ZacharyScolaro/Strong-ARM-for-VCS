@@ -39,7 +39,7 @@ _estack = 0x20020000;    /* end of 128K RAM */
 
 /* Generate a link error if heap and stack don't fit into RAM */
 _Min_Heap_Size = 0;      /* required amount of heap  */
-_Min_Stack_Size = 0x400; /* required amount of stack */
+_Min_Stack_Size = 0x1000; /* required amount of stack */
 _Flash_Origin = 0x08010000;
 
 /* Specify the memory areas */
@@ -65,7 +65,7 @@ SECTIONS
   /* The program code and other data goes into FLASH */
   .text :
   {
-    . = ALIGN(4);
+    . = ALIGN(16);
     *(.text)           /* .text sections (code) */
     *(.text*)          /* .text* sections (code) */
     *(.glue_7)         /* glue arm to thumb code */
@@ -75,17 +75,17 @@ SECTIONS
     KEEP (*(.init))
     KEEP (*(.fini))
 
-    . = ALIGN(4);
+    . = ALIGN(16);
     _etext = .;        /* define a global symbols at end of code */
   } >FLASH
 
   /* Constant data goes into FLASH */
   .rodata :
   {
-    . = ALIGN(4);
+    . = ALIGN(16);
     *(.rodata)         /* .rodata sections (constants, strings, etc.) */
     *(.rodata*)        /* .rodata* sections (constants, strings, etc.) */
-    . = ALIGN(4);
+    . = ALIGN(16);
   } >FLASH
 
   .ARM.extab   : { *(.ARM.extab* .gnu.linkonce.armextab.*) } >FLASH
