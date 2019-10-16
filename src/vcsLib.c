@@ -90,6 +90,24 @@ void EndOverblank()
 	SetNextRomAddress(0x1000);
 }
 
+void vcsSetMasks(unsigned char * aMask, unsigned char * xMask, unsigned char * yMask)
+{
+	*aMask = *xMask = *yMask = 0xff;
+}
+
+void vcsWrite3(unsigned char ZP, unsigned char data)
+{
+	InjectRomByte(0x85);
+	InjectRomByte(ZP);
+
+	// Stuff in the data over what's there
+	while (ZP != ADDR_IN)
+		;
+
+	DATA_OUT = ((uint16_t)data) << 8;
+	SET_DATA_MODE_OUT
+}
+
 void vcsWrite5(unsigned char ZP, unsigned char data)
 {
 	InjectRomByte(0xa9);

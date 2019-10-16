@@ -49,8 +49,14 @@
 
 #define CXP0FB 0x02
 
+#define INPT0 0x8
+#define INPT1 0x9
+#define INPT2 0xa
+#define INPT3 0xb
+#define INPT4 0xc
+#define INPT5 0xd
 
-#define INPT4 0x000c
 #define SWCHA 0x0280
+#define SWCHB 0x0282
 
 #endif // VCS_H

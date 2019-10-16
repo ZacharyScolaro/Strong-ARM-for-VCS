@@ -22,6 +22,8 @@ void StartOverblank();
 
 void EndOverblank();
 
+void vcsWrite3(unsigned char ZP, unsigned char data);
+
 void vcsWrite5(unsigned char ZP, unsigned char data);
 
 void vcsLda2(unsigned char data);
@@ -43,6 +45,8 @@ void vcsTxs2();
 void vcsJsr6(unsigned short target);
 
 void vcsLibInit();
+
+void vcsSetMasks(unsigned char * aMask, unsigned char * xMask, unsigned char * yMask);
 
 #ifdef __cplusplus
 }
