@@ -157,10 +157,26 @@ void vcsStx3(unsigned char ZP)
 	YieldDataBus(ZP);
 }
 
+void vcsStx4(unsigned char ZP)
+{
+	InjectRomByte(0x8e);
+	InjectRomByte(ZP);
+	InjectRomByte(00);
+	YieldDataBus(ZP);
+}
+
 void vcsSty3(unsigned char ZP)
 {
 	InjectRomByte(0x84);
 	InjectRomByte(ZP);
+	YieldDataBus(ZP);
+}
+
+void vcsSty4(unsigned char ZP)
+{
+	InjectRomByte(0x8c);
+	InjectRomByte(ZP);
+	InjectRomByte(00);
 	YieldDataBus(ZP);
 }
 

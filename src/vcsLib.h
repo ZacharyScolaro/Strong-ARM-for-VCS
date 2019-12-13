@@ -38,7 +38,11 @@ void vcsSta4(unsigned char ZP);
 
 void vcsStx3(unsigned char ZP);
 
+void vcsStx4(unsigned char ZP);
+
 void vcsSty3(unsigned char ZP);
+
+void vcsSty4(unsigned char ZP);
 
 void vcsTxs2();
 
